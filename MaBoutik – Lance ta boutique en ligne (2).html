@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MaBoutik – Lance ta boutique en ligne</title>
+<style>
+:root{--bg:#f4fbf7;--w:#fff;--tx:#0f2a24;--mu:#5a6f68;--pr:#0a9f6e;--nv:#0b3b2e;--gr:#0a9f6e;--or:#fff4d6;--ot:#9a6700;--bd:#d9ece2;--ac:#f5b301;--rd:#ce1126;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07130f;--w:#0f211b;--tx:#e8f6ef;--mu:#9cbcae;--pr:#2fd196;--nv:#04100c;--gr:#2fd196;--or:#3a2f10;--ot:#ffd27a;--bd:#1f382f}}
+:root[data-theme="dark"]{--bg:#07130f;--w:#0f211b;--tx:#e8f6ef;--mu:#9cbcae;--pr:#2fd196;--nv:#04100c;--gr:#2fd196;--or:#3a2f10;--ot:#ffd27a;--bd:#1f382f}
+*{box-sizing:border-box}html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:25;background:var(--bg);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:4px solid transparent;border-image:linear-gradient(90deg,#ce1126 33%,#fcd116 33% 66%,#009460 66%) 1}
+.logo{font-weight:900;font-size:1.3rem}.logo i{font-style:normal;color:var(--pr)}
+nav{display:flex;gap:8px;align-items:center}nav a{color:var(--tx);text-decoration:none;font-weight:600;font-size:.9rem}
+.btn{display:inline-block;border:0;border-radius:999px;padding:12px 22px;font-weight:800;font-size:1rem;background:linear-gradient(135deg,#0ab57d,#087f58);color:#fff;text-decoration:none;cursor:pointer;box-shadow:0 6px 16px rgba(10,159,110,.35);transition:transform .15s}.btn:active{transform:scale(.97)}
+.btn.d{background:var(--nv);color:#fff;padding:9px 16px;font-size:.9rem}.btn.o{background:var(--w);color:var(--pr);border:1.5px solid var(--pr)}.btn.w{background:#fff;color:var(--pr)}.btn.wa{background:#25d366;color:#073b1a}
+section{padding:36px 16px;max-width:980px;margin:auto}
+.c{text-align:center}h1{font-size:2.1rem;line-height:1.12;margin:14px 0}h2{font-size:1.55rem;margin:0 0 8px;line-height:1.2}
+.g{background:linear-gradient(90deg,#0a9f6e,#f5b301);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mu{color:var(--mu)}.pill{display:inline-block;background:var(--w);border:1px solid var(--bd);border-radius:999px;padding:8px 16px;font-size:.88rem}
+.row{display:grid;gap:12px}@media(min-width:720px){.r3{grid-template-columns:repeat(3,1fr)}.r2{grid-template-columns:repeat(2,1fr)}.r4{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--w);border:1px solid var(--bd);border-radius:22px;padding:20px;box-shadow:0 8px 22px rgba(10,159,110,.08);transition:transform .2s}.card:hover{transform:translateY(-3px)}.r3>.card:nth-child(1){border-top:5px solid var(--rd)}.r3>.card:nth-child(2){border-top:5px solid var(--ac)}.r3>.card:nth-child(3){border-top:5px solid var(--pr)}.hero{margin:14px 12px;max-width:none;border-radius:30px;background:linear-gradient(135deg,#087f58 0%,#0a9f6e 50%,#0b3b2e 100%);color:#fff;padding:44px 18px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:rgba(245,179,1,.35)}.hero>*{position:relative;z-index:1}.hero .g{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#ffd84d}.hero .mu{color:#d8f3e8}.hero .pill{background:#fff;color:#0f2a24;font-weight:700}.hero .btn{background:#f5b301;color:#2a1d00;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.card .q{color:var(--mu);font-size:.9rem}.card h3{margin:2px 0 8px;font-size:1.15rem}
+.num{width:44px;height:44px;border-radius:50%;background:var(--pr);color:#fff;font-weight:800;display:grid;place-items:center;margin-bottom:8px}
+.st{font-size:1.6rem;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;margin-bottom:8px;background:#e3f6ee}.r4>.card:nth-child(3n+2) .st{background:#fff4d6}.r4>.card:nth-child(3n) .st{background:#fde4e7}
+.pc{background:var(--w);border:1px solid var(--bd);border-radius:18px;padding:14px;display:flex;gap:12px;align-items:center}
+.pc .em{font-size:2.6rem;width:70px;height:70px;display:grid;place-items:center;background:var(--or);border-radius:14px;flex:none}
+.pc .b{flex:1;font-size:.88rem}.pc b{font-size:1rem}.tag{display:inline-block;background:var(--or);color:var(--ot);border-radius:10px;padding:3px 8px;font-size:.78rem;font-weight:600}
+.gain{color:var(--gr);font-weight:900}
+.plan.pro{background:linear-gradient(160deg,#0b3b2e,#087f58);color:#fff;border:2px solid var(--ac)}.plan .pr{font-size:2rem;font-weight:900}.plan ul{list-style:none;padding:0;margin:12px 0}.plan li:before{content:"✓ ";color:var(--gr);font-weight:800}
+.badge{background:#f5b301;color:#2a1d00;font-weight:800;font-size:.75rem;padding:4px 10px;border-radius:999px}
+details{background:var(--w);border:1px solid var(--bd);border-radius:16px;padding:14px 16px;margin-bottom:10px}summary{font-weight:700;cursor:pointer}details p{color:var(--mu);margin:8px 0 0}
+.cta .btn{background:#f5b301;color:#2a1d00}.cta{background:linear-gradient(135deg,#0b3b2e,#0a9f6e);color:#fff;border-radius:26px;padding:34px 20px;text-align:center}
+.num2{font-size:1.5rem;font-weight:900;color:var(--pr);margin:6px 0 12px;letter-spacing:.5px}.pay{text-align:center}.pay .st{margin:0 auto 8px}
+footer{text-align:center;color:var(--mu);font-size:.85rem;padding:24px 16px 40px}
+#wz{position:fixed;inset:0;background:var(--bg);z-index:40;overflow:auto;display:none;padding:calc(env(safe-area-inset-top,0px) + 14px) 16px calc(env(safe-area-inset-bottom,0px) + 24px)}
+#wz .in{max-width:560px;margin:auto}.bars{display:flex;gap:6px;margin:12px 0 6px}.bars span{flex:1;height:6px;border-radius:6px;background:var(--bd)}.bars span.on{background:var(--pr)}
+label{display:block;font-weight:700;margin:12px 0 4px;font-size:.9rem}
+input,textarea{width:100%;padding:13px;border:1.5px solid var(--bd);border-radius:14px;background:var(--w);color:var(--tx);font-size:1rem;font-family:inherit}
+.chk{list-style:none;padding:0;margin:16px 0}.chk li{padding:8px 0;color:var(--mu)}.chk li.ok{color:var(--tx);font-weight:600}.chk li:before{content:"○ ";}.chk li.ok:before{content:"✅ "}
+.pg{height:12px;background:var(--bd);border-radius:12px;overflow:hidden}.pg div{height:100%;width:0;background:var(--pr);transition:width .5s}
+.shop{border:6px solid var(--nv);border-radius:28px;background:var(--w);padding:16px;text-align:center}.shop .em{font-size:4rem}
+.note{background:var(--or);color:var(--ot);border-radius:14px;padding:10px 14px;font-size:.85rem;margin-top:12px}
+.lnk{background:var(--w);border:1px solid var(--bd);border-radius:999px;padding:10px 16px;font-weight:700;word-break:break-all;text-align:center}
+.x{float:right;background:none;border:0;font-size:1.3rem;color:var(--tx)}
+</style>
+</head>
+<body>
+<header><div class="logo">Ma<i>Boutik</i></div><nav><a href="#prix">Tarifs</a><a href="#faq">FAQ</a><a class="btn d" data-go>Créer ma boutique</a></nav></header>
+
+<section class="c hero">
+<span class="pill">🇬🇳 Pensé pour les entrepreneurs de Guinée</span>
+<h1>Lance ton business en ligne, <span class="g">sans rien coder.</span></h1>
+<p class="mu">Choisis un produit ou ajoute le tien : on prépare ta boutique, ta vidéo pub et ton lien WhatsApp en quelques minutes. Tu gères la livraison, on s’occupe du reste.</p>
+<a class="btn" data-go>Créer ma boutique gratuitement →</a>
+<p class="mu" style="font-size:.9rem">✓ Gratuit pour commencer &nbsp; ✓ Produits prêts à vendre &nbsp; ✓ Orange Money &amp; MTN MoMo</p>
+</section>
+
+<section>
+<h2 class="c">Les 3 blocages des débutants, réglés.</h2>
+<div class="row r3" style="margin-top:16px">
+<div class="card"><div class="q">« Je n’ai pas de produit »</div><h3>Un catalogue prêt à vendre</h3><p class="mu">Des produits avec prix d’achat, prix de vente et bénéfice par vente déjà calculés.</p></div>
+<div class="card"><div class="q">« Je ne sais pas faire un site »</div><h3>Ta boutique en 5 minutes</h3><p class="mu">Page d’accueil, fiche produit et formulaire de commande créés automatiquement.</p></div>
+<div class="card"><div class="q">« Je ne veux pas me montrer »</div><h3>Des vidéos pub sans te filmer</h3><p class="mu">Accroches, sous-titres et formats TikTok, Reels et WhatsApp.</p></div>
+</div></section>
+
+<section id="cat">
+<h2>Des produits à vendre, déjà dans l’app</h2><p class="mu">Les gains affichés sont des exemples de démonstration.</p>
+<div class="row r2" id="cl" style="margin-top:12px"></div></section>
+
+<section>
+<h2 class="c">Lance-toi en 3 étapes</h2>
+<div class="row r3" style="margin-top:16px">
+<div class="card"><div class="num">1</div><h3>Choisis un produit</h3><p class="mu">Dans le catalogue ou ajoute le tien. Tu gères le stock et la livraison.</p></div>
+<div class="card"><div class="num">2</div><h3>L’IA crée ta boutique et tes vidéos</h3><p class="mu">Tu les vois se construire sous tes yeux.</p></div>
+<div class="card"><div class="num">3</div><h3>Partage et encaisse</h3><p class="mu">Tu partages ton lien sur WhatsApp et tu reçois tes commandes.</p></div>
+</div></section>
+
+<section>
+<h2 class="c">Tout ce qu’il te faut pour vendre</h2>
+<div class="row r4" style="margin-top:16px">
+<div class="card"><div class="st">💳</div><b>Paiements locaux</b><p class="mu">Orange Money, MTN MoMo et paiement à la livraison.</p></div>
+<div class="card"><div class="st">📦</div><b>Suivi des commandes</b><p class="mu">Reçue, en livraison, livrée : tout est dans ton tableau de bord.</p></div>
+<div class="card"><div class="st">🏷️</div><b>Codes promo</b><p class="mu">Offre des réductions pour attirer tes premiers clients.</p></div>
+<div class="card"><div class="st">⭐</div><b>Avis clients</b><p class="mu">Rassure tes acheteurs avec des notes et des témoignages.</p></div>
+<div class="card"><div class="st">🧮</div><b>Calculateur de bénéfice</b><p class="mu">Prix d’achat, frais de livraison, marge : tu sais ce que tu gagnes.</p></div>
+<div class="card"><div class="st">📣</div><b>Pubs Facebook &amp; TikTok</b><p class="mu">Affiches et textes publicitaires générés pour ton produit.</p></div>
+<div class="card"><div class="st">🚚</div><b>Zones de livraison</b><p class="mu">Conakry, Kindia, Kankan… fixe un tarif par ville.</p></div>
+<div class="card"><div class="st">📊</div><b>Statistiques</b><p class="mu">Visites, commandes, produits qui se vendent le mieux.</p></div>
+</div></section>
+
+<section id="prix">
+<h2 class="c">Choisis ton abonnement</h2>
+<div class="row r2" style="margin-top:16px">
+<div class="card plan"><b>Starter</b><div class="pr">29 000 GNF <small class="mu">/ mois</small></div><ul><li>Boutique complète</li><li>Jusqu’à 10 produits</li><li>Factures et bénéfices</li><li>Support standard</li></ul><a class="btn o" data-go>Choisir Starter</a></div>
+<div class="card plan pro"><span class="badge">LE PLUS CHOISI</span><br><b>Pro</b><div class="pr">59 000 GNF <small>/ mois</small></div><ul><li>Produits et ventes illimités</li><li>Vidéos pub IA</li><li>Codes promo et statistiques</li><li>Support prioritaire WhatsApp</li></ul><a class="btn w" data-go>Choisir Pro</a></div>
+</div><p class="c mu" style="font-size:.85rem">Tarifs d’exemple, à ajuster selon ton modèle économique.</p></section>
+
+<section id="faq">
+<h2 class="c">Tu te poses ces questions ?</h2><div style="margin-top:14px">
+<details open><summary>Je n’ai jamais rien vendu, c’est pour moi ?</summary><p>Oui. L’app te guide étape par étape : tu ajoutes ton produit, la boutique et les vidéos pub sont préparées pour toi.</p></details>
+<details><summary>Faut-il de l’argent pour commencer ?</summary><p>Non, la création de la boutique est gratuite. Tu paies seulement le stock de ton produit.</p></details>
+<details><summary>Comment mes clients paient ?</summary><p>Par Orange Money, MTN MoMo ou en espèces à la livraison.</p></details>
+<details><summary>Comment je trouve mes premiers clients ?</summary><p>Partage ton lien sur WhatsApp, Facebook et TikTok avec tes vidéos pub et tes affiches.</p></details>
+<details><summary>Le dropshipping est-il disponible en Guinée ?</summary><p>Oui, avec des fournisseurs locaux. Tu choisis le produit, on t’indique les prix et ta marge.</p></details>
+</div></section>
+
+<section id="paiement"><h2 class="c">Paye ton abonnement</h2><p class="c mu">Envoie ton paiement, puis confirme-le sur WhatsApp : ton compte est activé rapidement.</p><div class="row r2" style="margin-top:16px"><div class="card pay"><div class="st">🟠</div><b>Orange Money</b><div class="num2">+224 628 74 38 05</div><button class="btn o" data-copy="+224628743805">Copier le numéro</button></div><div class="card pay"><div class="st">💳</div><b>Paycard</b><div class="num2">186 366 579</div><button class="btn o" data-copy="186366579">Copier le numéro</button></div></div><div class="c" style="margin-top:16px"><a class="btn wa" target="_blank" href="https://wa.me/224628743805?text=Bonjour%2C%20j%E2%80%99ai%20effectu%C3%A9%20le%20paiement%20de%20mon%20abonnement%20MaBoutik.">💬 J’ai payé, confirmer sur WhatsApp</a></div></section>
+
+<section><div class="cta"><h2>Ta première vente commence aujourd’hui.</h2><p>Crée ta boutique en 5 minutes. Gratuitement.</p><a class="btn w" data-go>Créer ma boutique gratuitement →</a></div></section>
+<footer>© 2026 MaBoutik · Guides · Se connecter<br>CGU · Confidentialité · Cookies · Mentions légales</footer>
+
+<div id="wz"><div class="in"><button class="x" id="wx" aria-label="Fermer">✕</button><div class="logo">Ma<i>Boutik</i></div><div class="bars" id="bars"></div><div class="mu" id="sl"></div><div id="wb"></div></div></div>
+
+<script>
+var P=[
+{n:"Mini projecteur smart",e:"📽️",a:120000,v:280000},
+{n:"Huile de ricin capillaire",e:"🧴",a:20000,v:65000},
+{n:"Sandales confort",e:"🩴",a:60000,v:140000},
+{n:"Câble de charge 2 en 1",e:"🔌",a:15000,v:45000},
+{n:"Diffuseur d’encens",e:"🪔",a:100000,v:230000},
+{n:"Montre connectée",e:"⌚",a:90000,v:210000}];
+var S={step:1,prod:null,shop:"",name:"",wa:"",own:false};
+function f(n){n=Math.round(+n||0);return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,"\u202f")+" GNF"}
+function slug(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function card(p,i){return '<div class="pc"><div class="em">'+p.e+'</div><div class="b"><b>'+p.n+'</b><br><span class="tag">📦 Tu achètes le stock et tu livres toi-même</span><br>Achat '+f(p.a)+' · Vente '+f(p.v)+'<br><span class="gain">+'+f(p.v-p.a)+'</span> par vente<br><button class="btn" style="padding:8px 16px;margin-top:6px;font-size:.9rem" data-pick="'+i+'">Choisir</button></div></div>'}
+document.getElementById("cl").innerHTML=P.map(card).join("");
+var wz=document.getElementById("wz"),wb=document.getElementById("wb");
+function open_(){S.step=1;wz.style.display="block";wz.scrollTop=0;draw()}
+function bars(){document.getElementById("bars").innerHTML=[1,2,3,4,5].map(function(i){return '<span class="'+(i<=S.step?'on':'')+'"></span>'}).join("");document.getElementById("sl").textContent="Étape "+S.step+" sur 5 · "+["Ton produit","Ta boutique","Tes vidéos pub","Ton compte","En ligne !"][S.step-1]}
+function ticks(items,done){var i=0;var ul=document.getElementById("ck");var pg=document.getElementById("pgb");(function t(){if(i<items.length){ul.children[i].className="ok";i++;if(pg)pg.style.width=Math.round(i/items.length*100)+"%";setTimeout(t,850)}else setTimeout(done,600)})()}
+function list(a){return '<ul class="chk" id="ck">'+a.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul>'}
+function draw(){bars();var s=S.step,h="";
+if(s==1){h='<h2 style="margin-top:14px">Choisis ce que tu veux vendre</h2><p class="mu">Les produits qui se vendent le mieux, avec ce que tu gagnes à chaque vente.</p><button class="btn o" style="width:100%;margin-bottom:12px" data-own>📦 J’ai déjà mes produits</button>';
+if(S.own)h+='<div class="card"><label>Nom du produit *</label><input id="on" placeholder="Ex : Sac à main cuir"><div style="display:flex;gap:10px"><div style="flex:1"><label>Prix d’achat</label><input id="oa" type="number" inputmode="numeric" placeholder="0"></div><div style="flex:1"><label>Prix de vente *</label><input id="ov" type="number" inputmode="numeric" placeholder="0"></div></div><div class="pill" style="width:100%;margin-top:12px">Ton bénéfice par vente <b class="gain" id="og" style="float:right">0 GNF</b></div><label>Description (optionnel)</label><textarea id="od" rows="3" placeholder="Décris ton produit en quelques mots"></textarea><button class="btn" style="width:100%;margin-top:14px" data-ownok>Créer ma boutique →</button></div>';
+else h+='<div class="row">'+P.map(card).join("")+'</div>'}
+if(s==2){h='<h2 style="margin-top:14px">Donne un nom à ta boutique</h2><label>Nom de ta boutique</label><input id="sn" placeholder="Ex : Oumar Digital Shop" value="'+(S.shopName||"")+'"><div class="lnk" style="margin-top:12px" id="su">mabootik.gn/ta-boutique</div><button class="btn" style="width:100%;margin-top:14px" id="mk">Lancer la création →</button><div id="ld"></div>'}
+if(s==3){h='<h2 style="margin-top:14px">Vidéo pub en cours de préparation…</h2><p class="mu">Pour faire connaître ton produit sans te filmer.</p><div class="card"><div class="pg"><div id="pgb"></div></div>'+list(["Analyse de ton produit","Écriture des accroches","Montage et sous-titres","Format TikTok, Reels et WhatsApp"])+'</div><div class="note">Démo : dans la vraie version, ce traitement serait relié à un service de génération vidéo.</div>';}
+if(s==4){h='<h2 style="margin-top:14px">Crée ton compte</h2><label>Ton nom</label><input id="un" placeholder="Prénom et nom" value="'+S.name+'"><label>Numéro WhatsApp (avec l’indicatif)</label><input id="uw" type="tel" placeholder="224 6XX XX XX XX" value="'+S.wa+'"><button class="btn" style="width:100%;margin-top:16px" id="ok4">Mettre ma boutique en ligne →</button>'}
+if(s==5){var p=S.prod,u="mabootik.gn/"+S.shop,m=encodeURIComponent("Bonjour ! Découvre ma boutique : https://"+u);h='<h2 style="margin-top:14px">🎉 Ta boutique est prête, '+(S.name.split(" ")[0]||"")+' !</h2><div class="lnk">'+u+'</div><div class="shop" style="margin-top:16px"><b>'+(S.shopName||"Ma boutique")+'</b><div class="em">'+p.e+'</div><b>'+p.n+'</b><div class="gain" style="font-size:1.3rem">'+f(p.v)+'</div><p class="mu" style="font-size:.85rem">Livraison à Conakry · Paiement à la livraison, Orange Money, MTN MoMo</p><button class="btn" style="width:100%" id="cmd">Commander</button></div><a class="btn wa" style="width:100%;text-align:center;margin-top:14px" target="_blank" href="https://wa.me/?text='+m+'">💬 Partager sur WhatsApp</a><div class="card" style="margin-top:14px"><b>Ton tableau de bord</b><p class="mu" style="margin:6px 0">0 commande pour l’instant. Tes alertes « Nouvelle commande » et « Paiement reçu » apparaîtront ici.</p><b class="gain">Bénéfice par vente : '+f(p.v-p.a)+'</b></div><div class="note">Prochaines étapes : poster ta vidéo sur TikTok, créer une affiche Facebook, fixer tes zones de livraison.</div>'}
+wb.innerHTML=h;
+if(s==2){var sn=document.getElementById("sn"),su=document.getElementById("su");function up(){su.textContent="mabootik.gn/"+(slug(sn.value)||"ta-boutique")}sn.oninput=up;up();
+document.getElementById("mk").onclick=function(){if(!sn.value.trim()){sn.focus();return}S.shopName=sn.value.trim();S.shop=slug(S.shopName)||"ma-boutique";this.style.display="none";document.getElementById("ld").innerHTML=list(["Page d’accueil","Fiche de ton produit","Formulaire de commande","Paiement mobile et à la livraison"]);ticks([1,2,3,4],function(){S.step=3;draw()})}}
+if(s==3)ticks([1,2,3,4],function(){S.step=4;draw()});
+if(s==4)document.getElementById("ok4").onclick=function(){var n=document.getElementById("un").value.trim(),w=document.getElementById("uw").value.trim();if(!n||w.replace(/\D/g,"").length<8){alert("Renseigne ton nom et un numéro WhatsApp valide.");return}S.name=n;S.wa=w;S.step=5;draw()};
+if(s==5)document.getElementById("cmd").onclick=function(){alert("Démo : ici le client remplit son nom, son quartier et choisit son paiement.")};
+if(s==1&&S.own){var g=function(){document.getElementById("og").textContent=f(document.getElementById("ov").value-document.getElementById("oa").value)};document.getElementById("oa").oninput=document.getElementById("ov").oninput=g}}
+document.addEventListener("click",function(e){var t=e.target;
+if(t.dataset.go!==undefined){e.preventDefault();S.own=false;open_()}
+if(t.dataset.pick!==undefined){S.prod=P[+t.dataset.pick];S.step=2;wz.style.display="block";wz.scrollTop=0;draw()}
+if(t.dataset.own!==undefined){S.own=!S.own;draw()}
+if(t.dataset.ownok!==undefined){var n=document.getElementById("on").value.trim(),v=+document.getElementById("ov").value,a=+document.getElementById("oa").value||0;if(!n||!v){alert("Renseigne le nom et le prix de vente.");return}S.prod={n:n,e:"🛍️",a:a,v:v};S.step=2;draw()}});
+document.getElementById("wx").onclick=function(){wz.style.display="none"};
+document.addEventListener("click",function(e){var c=e.target.dataset.copy;if(c){try{navigator.clipboard.writeText(c).then(function(){e.target.textContent="✅ Copié"},function(){prompt("Copie le numéro :",c)})}catch(x){prompt("Copie le numéro :",c)}}});
+</script>
+</body>
+</html>
