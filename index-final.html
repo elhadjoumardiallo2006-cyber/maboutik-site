@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="MaBoutik aide les entrepreneurs guinéens à lancer leur boutique en ligne et vendre via WhatsApp.">
+  <title>MaBoutik — Lance ta boutique en ligne</title>
+  <style>
+    :root{--ink:#101827;--muted:#667085;--green:#16a36a;--green-dark:#08784b;--mint:#e9fbf2;--line:#e8edf0;--bg:#f7faf8;--white:#fff;--orange:#ff9f43}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+    a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.container{width:min(1120px,92%);margin:auto}
+    .topbar{background:#101827;color:#d7e2e9;text-align:center;padding:9px 12px;font-size:.86rem}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-size:1.55rem;font-weight:900;letter-spacing:-1px}.brand span{color:var(--green)}
+    .navlinks{display:flex;align-items:center;gap:26px;color:#475467;font-size:.94rem}.navlinks a:hover{color:var(--green)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:13px 19px;background:var(--green);color:#fff;font-weight:750;cursor:pointer;transition:.2s}.btn:hover{background:var(--green-dark);transform:translateY(-1px)}.btn.secondary{background:#fff;color:var(--ink);border:1px solid #dce5e0}.btn.small{padding:10px 14px;font-size:.9rem}.btn.full{width:100%}
+    .hero{background:radial-gradient(circle at 85% 15%,#c9f8dd 0,transparent 29%),linear-gradient(135deg,#f2fff7,#fff 62%);padding:76px 0 72px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px}.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#e0f8e9;color:#08784b;padding:7px 12px;border-radius:999px;font-weight:750;font-size:.84rem}
+    h1{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.06;letter-spacing:-2.7px;margin:20px 0}.hero h1 span{color:var(--green)}.lead{font-size:1.12rem;color:#536171;max-width:600px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:27px 0 22px}.ticks{display:flex;flex-wrap:wrap;gap:14px;color:#536171;font-size:.88rem}.ticks span:before{content:"✓";color:var(--green);font-weight:900;margin-right:6px}
+    .mockup{background:#fff;border:1px solid #e5eee8;border-radius:24px;padding:22px;box-shadow:0 28px 70px #173f2920;transform:rotate(1deg)}.mock-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.mock-title{font-weight:850}.pill{background:#e2f8eb;color:#08784b;border-radius:99px;padding:5px 9px;font-size:.75rem;font-weight:800}.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{background:#f7faf8;border:1px solid #edf1ee;padding:15px;border-radius:15px}.stat small{display:block;color:var(--muted)}.stat strong{font-size:1.45rem}.mock-products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}.mini-product{border:1px solid var(--line);border-radius:14px;padding:10px}.mini-img{height:90px;border-radius:10px;display:grid;place-items:center;font-size:2.6rem;background:linear-gradient(135deg,#e8f9ef,#f9f4e9)}.mini-product b{display:block;font-size:.88rem;margin-top:7px}.mini-product small{color:var(--muted)}
+    section{padding:76px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 38px}.section-head h2{font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.15;letter-spacing:-1.1px;margin:0 0 12px}.section-head p{color:var(--muted);margin:0}.pain-grid,.features-grid,.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:19px;padding:24px;background:#fff}.iconbox{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:var(--mint);font-size:1.4rem;margin-bottom:15px}.card h3{margin:0 0 8px;font-size:1.12rem}.card p{margin:0;color:var(--muted);font-size:.95rem}.quote{font-size:.85rem;color:#89939d;margin-bottom:8px}
+    .products-section{background:var(--bg)}.products-top{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}.products-top h2{font-size:2.2rem;letter-spacing:-1px;margin:0}.products-top p{margin:4px 0 0;color:var(--muted)}.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.product{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}.product-art{height:165px;display:grid;place-items:center;font-size:4rem;background:linear-gradient(135deg,#e5f9ee,#f8f1e7)}.product-body{padding:16px;display:flex;flex-direction:column;flex:1}.product-category{font-size:.76rem;color:var(--green-dark);font-weight:800;text-transform:uppercase;letter-spacing:.5px}.product h3{font-size:1rem;margin:5px 0}.product-desc{font-size:.85rem;color:var(--muted);min-height:42px}.prices{display:flex;justify-content:space-between;gap:8px;margin:12px 0 15px;font-size:.83rem}.prices b{font-size:.95rem}.profit{background:#eafaf1;color:#08784b;padding:4px 7px;border-radius:7px;font-weight:800;white-space:nowrap}.product .btn{margin-top:auto}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.step{text-align:center;padding:10px 20px}.step-num{width:54px;height:54px;margin:0 auto 16px;display:grid;place-items:center;background:var(--ink);color:white;border-radius:17px;font-weight:900;font-size:1.25rem}.step p{color:var(--muted)}
+    .features-grid{grid-template-columns:repeat(4,1fr)}.feature{padding:20px;border:1px solid var(--line);border-radius:16px}.feature .emoji{font-size:1.6rem}.feature h3{font-size:1rem;margin:10px 0 4px}.feature p{font-size:.88rem;color:var(--muted);margin:0}
+    .pricing-section{background:#f7faf8}.pricing-grid{max-width:850px;margin:auto;grid-template-columns:repeat(2,1fr)}.price-card{position:relative}.price-card.popular{border:2px solid var(--green);box-shadow:0 15px 40px #16a36a15}.popular-tag{position:absolute;top:-14px;right:20px;background:var(--green);color:#fff;padding:5px 11px;border-radius:99px;font-size:.75rem;font-weight:850}.price{font-size:2.2rem;font-weight:900;letter-spacing:-1px;margin:8px 0}.price small{font-size:.9rem;color:var(--muted);font-weight:500;letter-spacing:0}.price-card ul{padding-left:20px;color:#536171;min-height:135px}.price-card li{margin:7px 0}.note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:20px}
+    .faq{max-width:800px;margin:auto}.faq details{border-bottom:1px solid var(--line);padding:18px 4px}.faq summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:12px}.faq summary:after{content:"+";color:var(--green);font-size:1.3rem}.faq details[open] summary:after{content:"−"}.faq details p{color:var(--muted);margin:12px 0 0}
+    .payment{background:#101827;color:#fff;border-radius:24px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.payment p{color:#c5d0d8}.paybox{background:#fff;color:var(--ink);border-radius:17px;padding:20px}.payline{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.payline:last-of-type{border-bottom:0}.payline span{color:var(--muted)}.payment .btn{margin-top:14px}
+    footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .modal-backdrop{display:none;position:fixed;inset:0;background:#10182799;z-index:50;align-items:center;justify-content:center;padding:18px}.modal-backdrop.show{display:flex}.modal{background:#fff;border-radius:20px;width:min(520px,100%);max-height:92vh;overflow:auto;padding:24px;position:relative}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.close{border:0;background:#f1f4f2;border-radius:10px;width:38px;height:38px;font-size:1.3rem;cursor:pointer}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px;margin:12px 0}.field.full-field{grid-column:1/-1}.field label{font-weight:750;font-size:.88rem}.field input,.field select,.field textarea{border:1px solid #dce5e0;border-radius:10px;padding:12px;width:100%;background:#fff}.help{font-size:.8rem;color:var(--muted)}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero{padding:55px 0}.mockup{max-width:560px;margin:auto;transform:none}.product-grid{grid-template-columns:repeat(2,1fr)}.features-grid{grid-template-columns:repeat(2,1fr)}.pain-grid{grid-template-columns:1fr}.navlinks{gap:13px}.navlinks .nav-extra{display:none}}
+    @media(max-width:560px){.nav{height:66px}.navlinks>a:not(.btn){display:none}.brand{font-size:1.35rem}.hero h1{letter-spacing:-1.7px}.hero-actions .btn{width:100%}.ticks{gap:8px;flex-direction:column}.products-top{display:block}.products-top .btn{margin-top:15px}.product-grid{gap:10px}.product-art{height:125px;font-size:3rem}.product-body{padding:12px}.prices{display:block}.prices b{display:block}.steps{grid-template-columns:1fr;gap:15px}.features-grid{gap:10px}.feature{padding:14px}.pricing-grid{grid-template-columns:1fr;gap:22px}.payment{grid-template-columns:1fr;padding:23px}.form-grid{grid-template-columns:1fr}.field.full-field{grid-column:auto}section{padding:58px 0}}
+  </style>
+</head>
+<body>
+  <div class="topbar">🇬🇳 Pensé pour les entrepreneurs de Guinée · Simple, pratique et accessible</div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#accueil">Ma<span>Boutik</span></a>
+      <nav class="navlinks" aria-label="Navigation principale">
+        <a href="#produits">Produits</a><a href="#fonctionnalites" class="nav-extra">Fonctionnalités</a><a href="#prix">Tarifs</a><a href="#faq">FAQ</a>
+        <button class="btn small" onclick="openStoreModal()">Créer ma boutique</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">✨ Ton commerce, version digitale</span>
+          <h1>Lance ton business en ligne, <span>sans rien coder.</span></h1>
+          <p class="lead">Choisis un produit ou ajoute le tien : prépare ta boutique, tes idées de publicité et ton lien WhatsApp en quelques minutes. Tu gardes le contrôle de tes ventes et de ta livraison.</p>
+          <div class="hero-actions"><button class="btn" onclick="openStoreModal()">Créer ma boutique gratuitement →</button><a class="btn secondary" href="#produits">Découvrir les produits</a></div>
+          <div class="ticks"><span>Gratuit pour commencer</span><span>Produits prêts à vendre</span><span>Orange Money & MTN MoMo</span></div>
+        </div>
+        <div class="mockup" aria-label="Aperçu du tableau de bord MaBoutik">
+          <div class="mock-head"><div><div class="mock-title">Mon espace vendeur</div><small style="color:#667085">Un aperçu de ta boutique</small></div><span class="pill">● Démo</span></div>
+          <div class="stat-grid">
+            <div class="stat"><small>Commandes</small><strong>24</strong></div>
+            <div class="stat"><small>Chiffre d’affaires</small><strong>850 000 <small>GNF</small></strong></div>
+          </div>
+          <div class="mock-products">
+            <div class="mini-product"><div class="mini-img">🎧</div><b>Écouteurs sans fil</b><small>Exemple de produit</small></div>
+            <div class="mini-product"><div class="mini-img">⌚</div><b>Montre connectée</b><small>Exemple de produit</small></div>
+          </div>
+          <p class="help" style="margin:14px 2px 0">Les chiffres affichés sont fictifs et servent uniquement à illustrer l’interface.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head"><h2>Les blocages des débutants, réglés.</h2><p>Les outils essentiels pour commencer à vendre en ligne, même si tu débutes.</p></div>
+        <div class="pain-grid">
+          <article class="card"><div class="iconbox">📦</div><div class="quote">« Je n’ai pas de produit »</div><h3>Un catalogue pour démarrer</h3><p>Découvre des idées de produits et renseigne tes prix d’achat, de vente et ta marge. Vérifie toujours la disponibilité auprès du fournisseur.</p></article>
+          <article class="card"><div class="iconbox">🛍️</div><div class="quote">« Je ne sais pas faire un site »</div><h3>Ta boutique, simplement</h3><p>Présente tes articles, ajoute les informations utiles et partage ta page avec tes clients.</p></article>
+          <article class="card"><div class="iconbox">🎬</div><div class="quote">« Je ne veux pas me montrer »</div><h3>Des idées de publicité</h3><p>Prépare des accroches et des textes pour tes publications WhatsApp, Facebook et TikTok, sans avoir à te filmer.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section" id="produits">
+      <div class="container">
+        <div class="products-top"><div><h2>Des idées de produits à vendre</h2><p>Exemples de démonstration : confirme les prix et les stocks avant de vendre.</p></div><button class="btn secondary" onclick="openStoreModal()">Ajouter mon produit +</button></div>
+        <div class="product-grid" id="productGrid">
+          <article class="product" data-name="Écouteurs sans fil" data-price="120000"><div class="product-art">🎧</div><div class="product-body"><span class="product-category">Électronique</span><h3>Écouteurs sans fil</h3><div class="product-desc">Un accessoire pratique pour écouter de la musique.</div><div class="prices"><div>Prix suggéré <b>180 000 GNF</b></div><span class="profit">+60 000 GNF*</span></div><button class="btn full small" onclick="orderProduct('Écouteurs sans fil','180 000 GNF')">Commander / demander</button></div></article>
+          <article class="product" data-name="Montre connectée" data-price="180000"><div class="product-art">⌚</div><div class="product-body"><span class="product-category">Accessoires</span><h3>Montre connectée</h3><div class="product-desc">Une idée de produit pour une boutique moderne.</div><div class="prices"><div>Prix suggéré <b>250 000 GNF</b></div><span class="profit">+70 000 GNF*</span></div><button class="btn full small" onclick="orderProduct('Montre connectée','250 000 GNF')">Commander / demander</button></div></article>
+          <article class="product" data-name="Sac tendance" data-price="90000"><div class="product-art">👜</div><div class="product-body"><span class="product-category">Mode</span><h3>Sac tendance</h3><div class="product-desc">Un accessoire à proposer à tes clients.</div><div class="prices"><div>Prix suggéré <b>145 000 GNF</b></div><span class="profit">+55 000 GNF*</span></div><button class="btn full small" onclick="orderProduct('Sac tendance','145 000 GNF')">Commander / demander</button></div></article>
+          <article class="product" data-name="Lampe LED" data-price="65000"><div class="product-art">💡</div><div class="product-body"><span class="product-category">Maison</span><h3>Lampe LED</h3><div class="product-desc">Une idée d’article utile pour la maison.</div><div class="prices"><div>Prix suggéré <b>100 000 GNF</b></div><span class="profit">+35 000 GNF*</span></div><button class="btn full small" onclick="orderProduct('Lampe LED','100 000 GNF')">Commander / demander</button></div></article>
+        </div>
+        <p class="help" style="margin-top:17px">* Marges illustratives avant livraison, publicité, frais de paiement et autres dépenses. Ces articles et prix sont fictifs, pas des offres fournisseurs confirmées.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head"><h2>Lance-toi en 3 étapes</h2><p>Un parcours simple pour structurer ton activité et trouver tes premiers clients.</p></div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><h3>Choisis un produit</h3><p>Explore les idées disponibles ou prépare la fiche de ton propre article.</p></div>
+          <div class="step"><div class="step-num">2</div><h3>Prépare ta boutique</h3><p>Ajoute tes photos, tes prix, tes conditions de livraison et tes coordonnées.</p></div>
+          <div class="step"><div class="step-num">3</div><h3>Partage et vends</h3><p>Diffuse ton lien sur WhatsApp, Facebook et TikTok, puis suis tes commandes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fonctionnalites">
+      <div class="container">
+        <div class="section-head"><h2>Tout ce qu’il te faut pour vendre</h2><p>Les fonctionnalités à réunir pour gérer ton activité au même endroit.</p></div>
+        <div class="features-grid">
+          <div class="feature"><div class="emoji">💳</div><h3>Paiements locaux</h3><p>Prévois Orange Money, MTN MoMo et le paiement à la livraison.</p></div>
+          <div class="feature"><div class="emoji">📦</div><h3>Suivi des commandes</h3><p>Organise les commandes reçues, en livraison et livrées.</p></div>
+          <div class="feature"><div class="emoji">🏷️</div><h3>Codes promo</h3><p>Prépare des réductions pour tes campagnes commerciales.</p></div>
+          <div class="feature"><div class="emoji">⭐</div><h3>Avis clients</h3><p>Collecte des avis authentiques pour rassurer les acheteurs.</p></div>
+          <div class="feature"><div class="emoji">🧮</div><h3>Calcul de marge</h3><p>Prends en compte le prix d’achat et les frais pour estimer ton bénéfice.</p></div>
+          <div class="feature"><div class="emoji">📣</div><h3>Publicité</h3><p>Prépare des textes et concepts de visuels pour les réseaux sociaux.</p></div>
+          <div class="feature"><div class="emoji">🚚</div><h3>Zones de livraison</h3><p>Définis des tarifs selon les villes et quartiers desservis.</p></div>
+          <div class="feature"><div class="emoji">📊</div><h3>Statistiques</h3><p>Analyse les visites, les commandes et tes produits populaires.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section" id="prix">
+      <div class="container">
+        <div class="section-head"><h2>Choisis ton abonnement</h2><p>Commence simplement et choisis les outils adaptés à ton activité.</p></div>
+        <div class="pricing-grid">
+          <article class="card price-card"><h3>Starter</h3><p>Pour lancer ta première boutique.</p><div class="price">29 000 <small>GNF / mois</small></div><ul><li>Boutique complète</li><li>Jusqu’à 10 produits</li><li>Suivi des ventes et bénéfices</li><li>Support standard</li></ul><button class="btn secondary full" onclick="choosePlan('Starter','29 000 GNF / mois')">Choisir Starter</button></article>
+          <article class="card price-card popular"><span class="popular-tag">LE PLUS CHOISI</span><h3>Pro</h3><p>Pour développer tes ventes.</p><div class="price">59 000 <small>GNF / mois</small></div><ul><li>Produits et ventes illimités</li><li>Outils de préparation publicitaire</li><li>Codes promo et statistiques</li><li>Support prioritaire WhatsApp</li></ul><button class="btn full" onclick="choosePlan('Pro','59 000 GNF / mois')">Choisir Pro</button></article>
+        </div>
+        <p class="note">Tarifs d’exemple à valider selon le modèle économique réel. Aucun paiement n’est traité automatiquement par cette démo.</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head"><h2>Tu te poses ces questions ?</h2><p>Quelques réponses pour démarrer avec plus de clarté.</p></div>
+        <div class="faq">
+          <details><summary>Je n’ai jamais rien vendu, est-ce pour moi ?</summary><p>Oui, cette maquette est conçue pour guider les débutants : choisir un produit, présenter son offre et partager sa boutique. Les fonctions automatiques nécessitent encore une vraie application connectée.</p></details>
+          <details><summary>Faut-il de l’argent pour commencer ?</summary><p>La création d’une page de démonstration peut être gratuite. En revanche, acheter du stock, livrer les produits, faire de la publicité ou payer certains services peut coûter de l’argent.</p></details>
+          <details><summary>Comment mes clients paient-ils ?</summary><p>Tu peux convenir avec eux d’un paiement par Orange Money, MTN MoMo ou en espèces à la livraison. Le présent fichier ne traite pas lui-même les paiements.</p></details>
+          <details><summary>Comment trouver mes premiers clients ?</summary><p>Partage tes offres sur WhatsApp, Facebook et TikTok, utilise des photos claires, affiche tes conditions de livraison et réponds rapidement aux questions.</p></details>
+          <details><summary>Le dropshipping est-il disponible en Guinée ?</summary><p>Il faut d’abord identifier des fournisseurs fiables, confirmer les stocks, les prix, les délais et les modalités de retour. MaBoutik ne garantit pas la disponibilité de fournisseurs.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="paiement">
+      <div class="container">
+        <div class="payment">
+          <div><span class="eyebrow">💚 Activation d’abonnement</span><h2 style="font-size:2rem;line-height:1.15;margin:18px 0 10px">Prêt à faire grandir ta boutique ?</h2><p>Choisis une formule, puis contacte l’équipe pour confirmer les modalités de paiement et l’activation.</p><p class="help" style="color:#c5d0d8">Vérifie les coordonnées et les tarifs avant tout transfert d’argent.</p></div>
+          <div class="paybox"><h3 style="margin-top:0">Activation et paiement</h3><p style="color:#536171">Les moyens de paiement et les tarifs doivent être confirmés directement avec l’équipe MaBoutik avant tout transfert d’argent.</p><div class="payline"><div><b>📱 Paiement mobile</b><br><span>Orange Money ou autre moyen disponible</span></div><strong>À confirmer</strong></div><div class="payline"><div><b>🧾 Référence de paiement</b><br><span>Demande les coordonnées officielles</span></div><strong>À confirmer</strong></div><a class="btn full" target="_blank" rel="noopener" href="https://wa.me/224628743805?text=Bonjour%2C%20je%20souhaite%20confirmer%20les%20tarifs%20et%20les%20moyens%20de%20paiement%20officiels%20de%20MaBoutik.">💬 Confirmer sur WhatsApp</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:10px">
+      <div class="container" style="text-align:center;background:var(--mint);border-radius:24px;padding:42px 20px">
+        <h2 style="font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 10px">Ta première vente commence ici.</h2><p style="color:#536171;margin:0 0 22px">Prépare ta boutique et présente tes produits au monde.</p><button class="btn" onclick="openStoreModal()">Créer ma boutique gratuitement →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><div><a class="brand" href="#accueil">Ma<span>Boutik</span></a><div>© <span id="year"></span> MaBoutik · Pensé pour la Guinée</div></div><div class="footer-links"><a href="#fonctionnalites">Fonctionnalités</a><a href="#prix">Tarifs</a><a href="#faq">FAQ</a><a href="#paiement">Contact</a></div></div></footer>
+
+  <div class="modal-backdrop" id="storeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeStoreModal()">
+    <div class="modal">
+      <div class="modal-head"><div><h2 id="modalTitle" style="margin:0">Prépare ta boutique</h2><p style="margin:4px 0;color:#667085;font-size:.9rem">Remplis ces informations pour générer un récapitulatif.</p></div><button class="close" aria-label="Fermer" onclick="closeStoreModal()">×</button></div>
+      <form id="storeForm">
+        <div class="form-grid">
+          <div class="field"><label for="owner">Ton nom</label><input id="owner" name="owner" required placeholder="Ex. Amadou Diallo"></div>
+          <div class="field"><label for="shop">Nom de la boutique</label><input id="shop" name="shop" required placeholder="Ex. Amadou Shop"></div>
+          <div class="field"><label for="phone">WhatsApp</label><input id="phone" name="phone" required placeholder="+224 ..." inputmode="tel"></div>
+          <div class="field"><label for="city">Ville</label><select id="city" name="city" required><option value="">Choisir une ville</option><option>Conakry</option><option>Kindia</option><option>Labé</option><option>Kankan</option><option>N'zérékoré</option><option>Autre</option></select></div>
+          <div class="field full-field"><label for="kind">Que veux-tu vendre ?</label><select id="kind" name="kind" required><option value="">Choisir une catégorie</option><option>Mode et accessoires</option><option>Électronique</option><option>Maison</option><option>Beauté et soins</option><option>Alimentation</option><option>Autre</option></select></div>
+        </div>
+        <p class="help">Cette maquette ne crée pas encore de compte en ligne et n’enregistre pas les données sur un serveur.</p>
+        <button class="btn full" type="submit">Préparer mon récapitulatif WhatsApp</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    const WHATSAPP_NUMBER = "224628743805"; // Remplace par le numéro officiel de ton entreprise si nécessaire.
+    document.getElementById("year").textContent = new Date().getFullYear();
+    function openStoreModal(){document.getElementById("storeModal").classList.add("show");document.body.style.overflow="hidden"}
+    function closeStoreModal(){document.getElementById("storeModal").classList.remove("show");document.body.style.overflow=""}
+    function sendWhatsApp(message){window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank","noopener")}
+    function orderProduct(name,price){sendWhatsApp("Bonjour MaBoutik, je souhaite des informations sur le produit : "+name+". Prix affiché : "+price+". Merci de confirmer la disponibilité et les conditions de livraison.")}
+    function choosePlan(plan,price){sendWhatsApp("Bonjour MaBoutik, je souhaite des informations pour l’abonnement "+plan+" ("+price+"). Merci de confirmer le tarif et les modalités d’activation.")}
+    document.getElementById("storeForm").addEventListener("submit",function(e){
+      e.preventDefault();
+      const data=new FormData(e.target);
+      const msg="Bonjour MaBoutik, je souhaite préparer ma boutique.%0A".replace("%0A","\n")+
+        "Nom : "+data.get("owner")+"\n"+
+        "Boutique : "+data.get("shop")+"\n"+
+        "WhatsApp : "+data.get("phone")+"\n"+
+        "Ville : "+data.get("city")+"\n"+
+        "Catégorie : "+data.get("kind")+"\n\n"+
+        "Merci de m’indiquer les prochaines étapes.";
+      closeStoreModal();sendWhatsApp(msg);
+    });
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")closeStoreModal()});
+  </script>
+</body>
+</html>
